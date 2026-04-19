@@ -125,6 +125,22 @@
       color: var(--text-faint);
     }
 
+    /* ── Mobile language bar ── */
+    .mobile-lang-bar {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: var(--bg-nav);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 14px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      gap: 6px;
+      scrollbar-width: none;
+    }
+    .mobile-lang-bar::-webkit-scrollbar { display: none; }
+
     /* ── Language switcher ── */
     .lang-switcher {
       padding: 12px 16px 20px;
@@ -473,7 +489,8 @@
     /* ── Responsive ── */
     @media (max-width: 800px) {
       nav { display: none; }
-      main { margin-left: 0; margin-right: 0; }
+      .mobile-lang-bar { display: flex; }
+      main { margin-left: 0; margin-right: 0; padding-top: 48px; }
       section { padding: 40px 24px 0; }
       .hero { padding: 48px 24px 40px; }
       .hero h1 { font-size: 32px; }
@@ -528,6 +545,18 @@
     </div>
   </div>
 </nav>
+
+<!-- ── Mobile language bar ── -->
+<div class="mobile-lang-bar">
+  <button class="lang-btn" data-lang="en"      onclick="applyLang('en')">English</button>
+  <button class="lang-btn" data-lang="es"      onclick="applyLang('es')">Español</button>
+  <button class="lang-btn" data-lang="fr"      onclick="applyLang('fr')">Français</button>
+  <button class="lang-btn" data-lang="ar"      onclick="applyLang('ar')">العربية</button>
+  <button class="lang-btn" data-lang="ja"      onclick="applyLang('ja')">日本語</button>
+  <button class="lang-btn" data-lang="ko"      onclick="applyLang('ko')">한국어</button>
+  <button class="lang-btn" data-lang="vi"      onclick="applyLang('vi')">Tiếng Việt</button>
+  <button class="lang-btn" data-lang="zh-Hans" onclick="applyLang('zh-Hans')">中文</button>
+</div>
 
 <!-- ── Main ── -->
 <main>
