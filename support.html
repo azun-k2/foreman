@@ -655,7 +655,7 @@
       </div>
       <div class="field">
         <span class="field-label" data-i18n="jobs.field.client.label">Client Name</span>
-        <span class="field-desc" data-i18n="jobs.field.client.desc">The customer's name. Appears in the "Bill To" section of your invoice.</span>
+        <span class="field-desc" data-i18n-html="jobs.field.client.desc">The customer's name. Appears in the "Bill To" section of your invoice. If you've worked with this client before, tap <strong>Select existing client</strong> above the field to fill all contact details automatically.</span>
       </div>
       <div class="field">
         <span class="field-label" data-i18n="jobs.field.phone.label">Phone</span>
@@ -1012,7 +1012,7 @@
     <div class="fields">
       <div class="field">
         <span class="field-label" data-i18n="sub.field.price.label">Price</span>
-        <span class="field-desc" data-i18n="sub.field.price.desc">$9.99 per month (price may vary by region — the exact price for your App Store territory is shown in the app).</span>
+        <span class="field-desc" data-i18n="sub.field.price.desc">$4.99 per month (price may vary by region — the exact price for your App Store territory is shown in the app).</span>
       </div>
       <div class="field">
         <span class="field-label" data-i18n="sub.field.billing.label">Billing</span>
@@ -1213,7 +1213,7 @@ const translations = {
     'jobs.field.title.req': 'required',
     'jobs.field.title.desc': 'A short name that identifies this job in your list. Use something you\'ll recognise — e.g. <em>"Bathroom refit — Johnson"</em> or <em>"Rewire 42 Oak St"</em>.',
     'jobs.field.client.label': 'Client Name',
-    'jobs.field.client.desc': 'The customer\'s name. Appears in the "Bill To" section of your invoice.',
+    'jobs.field.client.desc': 'The customer\'s name. Appears in the "Bill To" section of your invoice. If you\'ve worked with this client before, tap <strong>Select existing client</strong> above the field to fill all contact details automatically.',
     'jobs.field.phone.label': 'Phone',
     'jobs.field.phone.desc': "Client's phone number. Displayed in their contact card inside the job.",
     'jobs.field.email.label': 'Email',
@@ -1354,7 +1354,7 @@ const translations = {
     'sub.h3.pro': 'Pro subscription',
     'sub.pro.p': 'Upgrading to Pro unlocks <strong>unlimited active jobs</strong>. Everything else stays the same — no features are gated behind the paywall, just the number of active jobs.',
     'sub.field.price.label': 'Price',
-    'sub.field.price.desc': '$9.99 per month (price may vary by region — the exact price for your App Store territory is shown in the app).',
+    'sub.field.price.desc': '$4.99 per month (price may vary by region — the exact price for your App Store territory is shown in the app).',
     'sub.field.billing.label': 'Billing',
     'sub.field.billing.desc': 'Billed monthly through your Apple ID. You can cancel any time from iPhone Settings → [your name] → Subscriptions.',
     'sub.field.cancel.label': 'Data on cancel',
@@ -1465,7 +1465,7 @@ const translations = {
     'jobs.field.title.req': 'obligatorio',
     'jobs.field.title.desc': 'Un nombre corto que identifica este trabajo en tu lista. Usa algo que reconozcas — p. ej. <em>"Reforma baño — García"</em> o <em>"Instalación eléctrica Calle Mayor 42"</em>.',
     'jobs.field.client.label': 'Nombre del cliente',
-    'jobs.field.client.desc': 'El nombre del cliente. Aparece en la sección "Facturar a" de tu factura.',
+    'jobs.field.client.desc': 'El nombre del cliente. Aparece en la sección "Facturar a" de tu factura. Si ya has trabajado con este cliente, toca <strong>Seleccionar cliente existente</strong> encima del campo para completar todos los datos de contacto automáticamente.',
     'jobs.field.phone.label': 'Teléfono',
     'jobs.field.phone.desc': 'Número de teléfono del cliente. Aparece en su tarjeta de contacto dentro del trabajo.',
     'jobs.field.email.label': 'Correo electrónico',
@@ -1606,7 +1606,7 @@ const translations = {
     'sub.h3.pro': 'Suscripción Pro',
     'sub.pro.p': 'Actualizar a Pro desbloquea <strong>trabajos activos ilimitados</strong>. Todo lo demás sigue igual — ninguna función está bloqueada tras el pago, solo el número de trabajos activos.',
     'sub.field.price.label': 'Precio',
-    'sub.field.price.desc': '9,99 € al mes (el precio puede variar según la región — el precio exacto para tu territorio de la App Store se muestra en la app).',
+    'sub.field.price.desc': '4,99 € al mes (el precio puede variar según la región — el precio exacto para tu territorio de la App Store se muestra en la app).',
     'sub.field.billing.label': 'Facturación',
     'sub.field.billing.desc': 'Se cobra mensualmente a través de tu ID de Apple. Puedes cancelar en cualquier momento desde Ajustes del iPhone → [tu nombre] → Suscripciones.',
     'sub.field.cancel.label': 'Datos al cancelar',
@@ -1717,7 +1717,7 @@ const translations = {
     'jobs.field.title.req': 'obligatoire',
     'jobs.field.title.desc': 'Un nom court qui identifie ce chantier dans votre liste. Choisissez quelque chose de reconnaissable — p. ex. <em>« Rénovation salle de bain — Dupont »</em> ou <em>« Électricité 42 rue des Lilas »</em>.',
     'jobs.field.client.label': 'Nom du client',
-    'jobs.field.client.desc': 'Le nom du client. Apparaît dans la section « Facturer à » de votre facture.',
+    'jobs.field.client.desc': 'Le nom du client. Apparaît dans la section « Facturer à » de votre facture. Si vous avez déjà travaillé avec ce client, appuyez sur <strong>Sélectionner un client existant</strong> au-dessus du champ pour remplir toutes les coordonnées automatiquement.',
     'jobs.field.phone.label': 'Téléphone',
     'jobs.field.phone.desc': 'Numéro de téléphone du client. Affiché dans sa fiche de contact à l\'intérieur du chantier.',
     'jobs.field.email.label': 'E-mail',
@@ -1858,7 +1858,7 @@ const translations = {
     'sub.h3.pro': 'Abonnement Pro',
     'sub.pro.p': 'Passer à Pro débloque des <strong>chantiers actifs illimités</strong>. Tout le reste reste identique — aucune fonctionnalité n\'est réservée aux abonnés, seulement le nombre de chantiers actifs.',
     'sub.field.price.label': 'Prix',
-    'sub.field.price.desc': '9,99 € par mois (le prix peut varier selon la région — le prix exact pour votre territoire App Store est affiché dans l\'app).',
+    'sub.field.price.desc': '4,99 € par mois (le prix peut varier selon la région — le prix exact pour votre territoire App Store est affiché dans l\'app).',
     'sub.field.billing.label': 'Facturation',
     'sub.field.billing.desc': 'Facturé mensuellement via votre identifiant Apple. Vous pouvez annuler à tout moment depuis Réglages iPhone → [votre nom] → Abonnements.',
     'sub.field.cancel.label': 'Données à l\'annulation',
@@ -1969,7 +1969,7 @@ const translations = {
     'jobs.field.title.req': 'مطلوب',
     'jobs.field.title.desc': 'اسم قصير يُعرّف هذه الوظيفة في قائمتك. استخدم شيئاً ستتذكره — مثل <em>"تجديد الحمام — أحمد"</em> أو <em>"تمديد كهرباء شارع الملك 42"</em>.',
     'jobs.field.client.label': 'اسم العميل',
-    'jobs.field.client.desc': 'اسم العميل. يظهر في قسم "الفاتورة إلى" في فاتورتك.',
+    'jobs.field.client.desc': 'اسم العميل. يظهر في قسم "الفاتورة إلى" في فاتورتك. إذا سبق أن عملت مع هذا العميل، اضغط على <strong>اختيار عميل موجود</strong> أعلاه لملء جميع بيانات الاتصال تلقائيًا.',
     'jobs.field.phone.label': 'الهاتف',
     'jobs.field.phone.desc': 'رقم هاتف العميل. يظهر في بطاقة الاتصال داخل الوظيفة.',
     'jobs.field.email.label': 'البريد الإلكتروني',
@@ -2110,7 +2110,7 @@ const translations = {
     'sub.h3.pro': 'اشتراك Pro',
     'sub.pro.p': 'الترقية إلى Pro تفتح <strong>وظائف نشطة غير محدودة</strong>. كل شيء آخر يبقى كما هو — لا توجد ميزات محجوبة خلف الاشتراك، فقط عدد الوظائف النشطة.',
     'sub.field.price.label': 'السعر',
-    'sub.field.price.desc': '9.99 دولار شهرياً (قد يختلف السعر حسب المنطقة — يظهر السعر الدقيق لمنطقة App Store الخاصة بك داخل التطبيق).',
+    'sub.field.price.desc': '4.99 دولار شهرياً (قد يختلف السعر حسب المنطقة — يظهر السعر الدقيق لمنطقة App Store الخاصة بك داخل التطبيق).',
     'sub.field.billing.label': 'الفوترة',
     'sub.field.billing.desc': 'تُحصَّل شهرياً عبر Apple ID. يمكنك الإلغاء في أي وقت من إعدادات iPhone ← [اسمك] ← الاشتراكات.',
     'sub.field.cancel.label': 'البيانات عند الإلغاء',
@@ -2221,7 +2221,7 @@ const translations = {
     'jobs.field.title.req': '必須',
     'jobs.field.title.desc': 'リストでこのジョブを識別する短い名前。自分がわかるものを使いましょう — 例：<em>「バスルームリフォーム — 田中様」</em>や<em>「電気工事 桜通り42番地」</em>。',
     'jobs.field.client.label': '顧客名',
-    'jobs.field.client.desc': '顧客の氏名。請求書の「請求先」セクションに表示されます。',
+    'jobs.field.client.desc': '顧客の氏名。請求書の「請求先」セクションに表示されます。このクライアントと以前に取引したことがある場合は、フィールド上の<strong>既存の顧客を選択</strong>をタップすると、すべての連絡先情報が自動的に入力されます。',
     'jobs.field.phone.label': '電話番号',
     'jobs.field.phone.desc': '顧客の電話番号。ジョブ内の連絡先カードに表示されます。',
     'jobs.field.email.label': 'メールアドレス',
@@ -2362,7 +2362,7 @@ const translations = {
     'sub.h3.pro': 'Proサブスクリプション',
     'sub.pro.p': 'Proにアップグレードすると<strong>無制限のアクティブジョブ</strong>が使えます。それ以外はすべて同じです — ペイウォールの後ろに隠れた機能はなく、変わるのはアクティブジョブの数だけです。',
     'sub.field.price.label': '価格',
-    'sub.field.price.desc': '月額9.99ドル（地域によって価格が異なる場合があります — あなたのApp Storeの地域の正確な価格はアプリ内に表示されます）。',
+    'sub.field.price.desc': '月額4.99ドル（地域によって価格が異なる場合があります — あなたのApp Storeの地域の正確な価格はアプリ内に表示されます）。',
     'sub.field.billing.label': '請求',
     'sub.field.billing.desc': 'Apple IDを通じて毎月請求されます。iPhoneの設定 → [自分の名前] → サブスクリプションからいつでもキャンセルできます。',
     'sub.field.cancel.label': 'キャンセル時のデータ',
@@ -2473,7 +2473,7 @@ const translations = {
     'jobs.field.title.req': '필수',
     'jobs.field.title.desc': '목록에서 이 작업을 식별하는 짧은 이름. 기억하기 쉬운 것으로 — 예: <em>"욕실 리모델링 — 김철수"</em> 또는 <em>"전기 배선 강남대로 42번지"</em>.',
     'jobs.field.client.label': '고객 이름',
-    'jobs.field.client.desc': '고객의 이름. 청구서의 "청구 대상" 섹션에 표시됩니다.',
+    'jobs.field.client.desc': '고객의 이름. 청구서의 "청구 대상" 섹션에 표시됩니다. 이전에 이 고객과 작업한 적이 있다면 필드 위의 <strong>기존 고객 선택</strong>을 탭하여 모든 연락처 정보를 자동으로 입력할 수 있습니다.',
     'jobs.field.phone.label': '전화번호',
     'jobs.field.phone.desc': '고객의 전화번호. 작업 내 연락처 카드에 표시됩니다.',
     'jobs.field.email.label': '이메일',
@@ -2614,7 +2614,7 @@ const translations = {
     'sub.h3.pro': 'Pro 구독',
     'sub.pro.p': 'Pro로 업그레이드하면 <strong>무제한 활성 작업</strong>이 잠금 해제됩니다. 그 외 모든 것은 동일합니다 — 유료 전용 기능은 없고, 달라지는 것은 활성 작업 수뿐입니다.',
     'sub.field.price.label': '가격',
-    'sub.field.price.desc': '월 9.99달러 (가격은 지역에 따라 다를 수 있습니다 — 앱 내에서 해당 App Store 지역의 정확한 가격이 표시됩니다).',
+    'sub.field.price.desc': '월 4.99달러 (가격은 지역에 따라 다를 수 있습니다 — 앱 내에서 해당 App Store 지역의 정확한 가격이 표시됩니다).',
     'sub.field.billing.label': '청구',
     'sub.field.billing.desc': 'Apple ID를 통해 월별로 청구됩니다. iPhone 설정 → [내 이름] → 구독에서 언제든지 취소할 수 있습니다.',
     'sub.field.cancel.label': '취소 시 데이터',
@@ -2725,7 +2725,7 @@ const translations = {
     'jobs.field.title.req': 'bắt buộc',
     'jobs.field.title.desc': 'Tên ngắn gọn xác định công việc này trong danh sách. Dùng thứ gì đó bạn sẽ nhận ra — ví dụ <em>"Sửa phòng tắm — Nguyễn"</em> hoặc <em>"Lắp điện 42 Phố Huế"</em>.',
     'jobs.field.client.label': 'Tên khách hàng',
-    'jobs.field.client.desc': 'Tên của khách hàng. Xuất hiện trong phần "Xuất hoá đơn cho" của hoá đơn.',
+    'jobs.field.client.desc': 'Tên của khách hàng. Xuất hiện trong phần "Xuất hoá đơn cho" của hoá đơn. Nếu bạn đã làm việc với khách hàng này trước đây, hãy nhấn <strong>Chọn khách hàng hiện có</strong> phía trên để tự động điền tất cả thông tin liên hệ.',
     'jobs.field.phone.label': 'Điện thoại',
     'jobs.field.phone.desc': 'Số điện thoại của khách hàng. Hiển thị trong thẻ liên lạc bên trong công việc.',
     'jobs.field.email.label': 'Email',
@@ -2866,7 +2866,7 @@ const translations = {
     'sub.h3.pro': 'Đăng ký Pro',
     'sub.pro.p': 'Nâng cấp lên Pro mở khoá <strong>công việc đang hoạt động không giới hạn</strong>. Mọi thứ khác giữ nguyên — không có tính năng nào bị khoá sau trả phí, chỉ là số công việc đang hoạt động.',
     'sub.field.price.label': 'Giá',
-    'sub.field.price.desc': '$9,99 mỗi tháng (giá có thể thay đổi theo khu vực — giá chính xác cho lãnh thổ App Store của bạn được hiển thị trong ứng dụng).',
+    'sub.field.price.desc': '$4,99 mỗi tháng (giá có thể thay đổi theo khu vực — giá chính xác cho lãnh thổ App Store của bạn được hiển thị trong ứng dụng).',
     'sub.field.billing.label': 'Thanh toán',
     'sub.field.billing.desc': 'Tính phí hàng tháng qua Apple ID của bạn. Bạn có thể huỷ bất kỳ lúc nào từ Cài đặt iPhone → [tên của bạn] → Đăng ký.',
     'sub.field.cancel.label': 'Dữ liệu khi huỷ',
@@ -2977,7 +2977,7 @@ const translations = {
     'jobs.field.title.req': '必填',
     'jobs.field.title.desc': '在列表中标识此工作的简短名称。使用您能辨认的内容 — 例如 <em>"浴室翻新 — 王先生"</em> 或 <em>"42 号公寓电气改造"</em>。',
     'jobs.field.client.label': '客户姓名',
-    'jobs.field.client.desc': '客户的姓名。显示在发票的"开票给"部分。',
+    'jobs.field.client.desc': '客户的姓名。显示在发票的"开票给"部分。如果您之前与此客户合作过，请点击字段上方的<strong>选择已有客户</strong>，自动填写所有联系方式。',
     'jobs.field.phone.label': '电话',
     'jobs.field.phone.desc': '客户的电话号码。显示在工作内的联系人卡片中。',
     'jobs.field.email.label': '邮箱',
@@ -3118,7 +3118,7 @@ const translations = {
     'sub.h3.pro': 'Pro 订阅',
     'sub.pro.p': '升级到 Pro 解锁<strong>无限活跃工作</strong>。其他一切保持不变 — 没有任何功能锁在付费墙后，只是活跃工作的数量。',
     'sub.field.price.label': '价格',
-    'sub.field.price.desc': '每月 $9.99（价格因地区而异 — 应用中显示您所在 App Store 地区的确切价格）。',
+    'sub.field.price.desc': '每月 $4.99（价格因地区而异 — 应用中显示您所在 App Store 地区的确切价格）。',
     'sub.field.billing.label': '计费',
     'sub.field.billing.desc': '通过您的 Apple ID 每月计费。您可以随时从 iPhone 设置 → [您的姓名] → 订阅取消。',
     'sub.field.cancel.label': '取消后的数据',
