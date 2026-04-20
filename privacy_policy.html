@@ -1,61 +1,430 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Foreman — Privacy Policy</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23e8680a'/%3E%3Ctext x='12' y='82' font-size='72'%3E%F0%9F%94%A8%3C/text%3E%3C/svg%3E">
 <style>
-  body { font-family: -apple-system, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; color: #1c1c1e; line-height: 1.6; }
-  h1 { font-size: 28px; } h2 { font-size: 18px; margin-top: 32px; }
-  p, li { font-size: 15px; color: #3a3a3c; }
-  a { color: #f5722a; }
+  :root {
+    --orange:    #e8680a;
+    --orange-dk: #bf5500;
+    --orange-bg: rgba(232,104,10,.09);
+    --orange-br: rgba(232,104,10,.25);
+    --border:    #cdd2e2;
+    --text:      #1c1c1e;
+    --text-body: #3a3a3c;
+    --text-muted:#68708e;
+    --bg:        #f5f5f7;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+    background: var(--bg);
+    color: var(--text-body);
+    line-height: 1.7;
+  }
+
+  [lang="ar"] body { font-family: "Segoe UI", "Helvetica Neue", Arial, Tahoma, sans-serif; }
+  [lang="ja"] body { font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", Meiryo, -apple-system, sans-serif; }
+  [lang="ko"] body { font-family: "Apple SD Gothic Neo", "Malgun Gothic", -apple-system, sans-serif; }
+  [lang="zh-Hans"] body { font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, sans-serif; }
+
+  /* ── Language bar ── */
+  .lang-bar {
+    background: #e4e7f1;
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .lang-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 4px 9px;
+    font-size: 12px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: background .14s, border-color .14s, color .14s;
+    font-family: inherit;
+  }
+
+  .lang-btn:hover { background: #fff; color: var(--text); }
+
+  .lang-btn.active {
+    background: var(--orange-bg);
+    border-color: var(--orange-br);
+    color: var(--orange-dk);
+    font-weight: 600;
+  }
+
+  /* ── Content ── */
+  .content {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 24px 80px;
+  }
+
+  h1 { font-size: 26px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  h2 { font-size: 17px; font-weight: 600; color: var(--text); margin-top: 32px; margin-bottom: 10px; }
+  p  { font-size: 15px; margin-bottom: 12px; }
+  ul { font-size: 15px; padding-left: 22px; margin-bottom: 12px; }
+  li { margin-bottom: 8px; }
+  a  { color: var(--orange); }
+
+  [dir="rtl"] ul { padding-left: 0; padding-right: 22px; }
 </style>
 </head>
 <body>
-<h1>Foreman — Privacy Policy</h1>
-<p><em>Last updated: April 2026</em></p>
 
-<p>Foreman ("the app") is built for tradespeople who value their privacy. This policy explains what data we collect, why, and how it's stored.</p>
+<div class="lang-bar">
+  <button class="lang-btn" data-lang="en"      onclick="applyLang('en')">English</button>
+  <button class="lang-btn" data-lang="es"      onclick="applyLang('es')">Español</button>
+  <button class="lang-btn" data-lang="fr"      onclick="applyLang('fr')">Français</button>
+  <button class="lang-btn" data-lang="ar"      onclick="applyLang('ar')">العربية</button>
+  <button class="lang-btn" data-lang="ja"      onclick="applyLang('ja')">日本語</button>
+  <button class="lang-btn" data-lang="ko"      onclick="applyLang('ko')">한국어</button>
+  <button class="lang-btn" data-lang="vi"      onclick="applyLang('vi')">Tiếng Việt</button>
+  <button class="lang-btn" data-lang="zh-Hans" onclick="applyLang('zh-Hans')">中文</button>
+</div>
 
-<h2>Data we collect</h2>
-<ul>
-  <li><strong>Job data</strong> (titles, client names, addresses, notes, time entries, photos, invoice items) — entered by you, stored locally on your device and optionally synced to your private iCloud account.</li>
-  <li><strong>Business settings</strong> (business name, phone, email, logo, hourly rate) — stored locally and in your private iCloud.</li>
-  <li><strong>Purchase information</strong> — handled entirely by Apple's App Store and StoreKit. We never see or store payment details.</li>
-</ul>
+<div class="content">
+  <h1 data-i18n="h1">Foreman — Privacy Policy</h1>
+  <p><em data-i18n="updated">Last updated: April 2026</em></p>
 
-<h2>Crash reports &amp; analytics</h2>
-<p>Foreman uses two Firebase services from Google to improve reliability and understand how the app is used:</p>
-<ul>
-  <li><strong>Firebase Crashlytics</strong> — automatically sends crash reports when the app crashes. Reports include device model, iOS version, app version, and a stack trace. They contain no personally identifiable information and no data you enter into the app.</li>
-  <li><strong>Firebase Analytics</strong> — records anonymised usage events (e.g. which features are tapped, screens visited). No job records, client names, photos, or other personal data are included.</li>
-</ul>
-<p>Both services are operated by Google LLC. Data is transmitted to Google's servers and subject to <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. You can review Firebase's data practices at <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.</p>
+  <p data-i18n="intro">Foreman ("the app") is built for tradespeople who value their privacy. This policy explains what data we collect, why, and how it's stored.</p>
 
-<h2>Data we do NOT collect</h2>
-<ul>
-  <li>We do not have our own servers. Your job data, photos, and settings live only on your device and in your private iCloud account.</li>
-  <li>We never see or store your job records, client details, photos, or invoices.</li>
-  <li>We do not sell data or share it with any third party beyond the Firebase services described above.</li>
-</ul>
+  <h2 data-i18n="s1.h2">Data we collect</h2>
+  <ul>
+    <li data-i18n-html="s1.li1"><strong>Job data</strong> (titles, client names, addresses, notes, time entries, photos, invoice items) — entered by you, stored locally on your device and optionally synced to your private iCloud account.</li>
+    <li data-i18n-html="s1.li2"><strong>Business settings</strong> (business name, phone, email, logo, hourly rate) — stored locally and in your private iCloud.</li>
+    <li data-i18n-html="s1.li3"><strong>Purchase information</strong> — handled entirely by Apple's App Store and StoreKit. We never see or store payment details.</li>
+  </ul>
 
-<h2>iCloud sync</h2>
-<p>If you are signed into iCloud, Foreman syncs your data to your private iCloud database using CloudKit. This data is accessible only to you — we have no access to it.</p>
+  <h2 data-i18n="s2.h2">Crash reports &amp; analytics</h2>
+  <p data-i18n="s2.p1">Foreman uses two Firebase services from Google to improve reliability and understand how the app is used:</p>
+  <ul>
+    <li data-i18n-html="s2.li1"><strong>Firebase Crashlytics</strong> — automatically sends crash reports when the app crashes. Reports include device model, iOS version, app version, and a stack trace. They contain no personally identifiable information and no data you enter into the app.</li>
+    <li data-i18n-html="s2.li2"><strong>Firebase Analytics</strong> — records anonymised usage events (e.g. which features are tapped, screens visited). No job records, client names, photos, or other personal data are included.</li>
+  </ul>
+  <p data-i18n-html="s2.p2">Both services are operated by Google LLC. Data is transmitted to Google's servers and subject to <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. You can review Firebase's data practices at <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.</p>
 
-<h2>Photos and camera</h2>
-<p>Photos you attach to jobs are stored locally in the app's document directory and optionally synced via iCloud. They are never uploaded anywhere else.</p>
+  <h2 data-i18n="s3.h2">Data we do NOT collect</h2>
+  <ul>
+    <li data-i18n="s3.li1">We do not have our own servers. Your job data, photos, and settings live only on your device and in your private iCloud account.</li>
+    <li data-i18n="s3.li2">We never see or store your job records, client details, photos, or invoices.</li>
+    <li data-i18n="s3.li3">We do not sell data or share it with any third party beyond the Firebase services described above.</li>
+  </ul>
 
-<h2>Location</h2>
-<p>Foreman requests location access only when you tap "Use My Location" in the job form. Location data is stored as part of your job record and is never transmitted to us.</p>
+  <h2 data-i18n="s4.h2">iCloud sync</h2>
+  <p data-i18n="s4.p">If you are signed into iCloud, Foreman syncs your data to your private iCloud database using CloudKit. This data is accessible only to you — we have no access to it.</p>
 
-<h2>Children</h2>
-<p>Foreman is not directed at children under 13. We do not knowingly collect data from children.</p>
+  <h2 data-i18n="s5.h2">Photos and camera</h2>
+  <p data-i18n="s5.p">Photos you attach to jobs are stored locally in the app's document directory and optionally synced via iCloud. They are never uploaded anywhere else.</p>
 
-<h2>Changes to this policy</h2>
-<p>We may update this policy. Continued use of the app after changes means you accept the updated policy.</p>
+  <h2 data-i18n="s6.h2">Location</h2>
+  <p data-i18n="s6.p">Foreman requests location access only when you tap "Use My Location" in the job form. Location data is stored as part of your job record and is never transmitted to us.</p>
 
-<h2>Contact</h2>
-<p>Questions? Email us at <a href="mailto:khangazun@gmail.com">support</a></p>
+  <h2 data-i18n="s7.h2">Children</h2>
+  <p data-i18n="s7.p">Foreman is not directed at children under 13. We do not knowingly collect data from children.</p>
+
+  <h2 data-i18n="s8.h2">Changes to this policy</h2>
+  <p data-i18n="s8.p">We may update this policy. Continued use of the app after changes means you accept the updated policy.</p>
+
+  <h2 data-i18n="s9.h2">Contact</h2>
+  <p data-i18n-html="s9.p">Questions? Email us at <a href="mailto:khangazun@gmail.com">support</a></p>
+</div>
+
+<script>
+const translations = {
+  en: {
+    'page.title': 'Foreman — Privacy Policy',
+    'h1':         'Foreman — Privacy Policy',
+    'updated':    'Last updated: April 2026',
+    'intro':      'Foreman ("the app") is built for tradespeople who value their privacy. This policy explains what data we collect, why, and how it\'s stored.',
+    's1.h2':  'Data we collect',
+    's1.li1': '<strong>Job data</strong> (titles, client names, addresses, notes, time entries, photos, invoice items) — entered by you, stored locally on your device and optionally synced to your private iCloud account.',
+    's1.li2': '<strong>Business settings</strong> (business name, phone, email, logo, hourly rate) — stored locally and in your private iCloud.',
+    's1.li3': '<strong>Purchase information</strong> — handled entirely by Apple\'s App Store and StoreKit. We never see or store payment details.',
+    's2.h2':  'Crash reports & analytics',
+    's2.p1':  'Foreman uses two Firebase services from Google to improve reliability and understand how the app is used:',
+    's2.li1': '<strong>Firebase Crashlytics</strong> — automatically sends crash reports when the app crashes. Reports include device model, iOS version, app version, and a stack trace. They contain no personally identifiable information and no data you enter into the app.',
+    's2.li2': '<strong>Firebase Analytics</strong> — records anonymised usage events (e.g. which features are tapped, screens visited). No job records, client names, photos, or other personal data are included.',
+    's2.p2':  'Both services are operated by Google LLC. Data is transmitted to Google\'s servers and subject to <a href="https://policies.google.com/privacy">Google\'s Privacy Policy</a>. You can review Firebase\'s data practices at <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.',
+    's3.h2':  'Data we do NOT collect',
+    's3.li1': 'We do not have our own servers. Your job data, photos, and settings live only on your device and in your private iCloud account.',
+    's3.li2': 'We never see or store your job records, client details, photos, or invoices.',
+    's3.li3': 'We do not sell data or share it with any third party beyond the Firebase services described above.',
+    's4.h2':  'iCloud sync',
+    's4.p':   'If you are signed into iCloud, Foreman syncs your data to your private iCloud database using CloudKit. This data is accessible only to you — we have no access to it.',
+    's5.h2':  'Photos and camera',
+    's5.p':   'Photos you attach to jobs are stored locally in the app\'s document directory and optionally synced via iCloud. They are never uploaded anywhere else.',
+    's6.h2':  'Location',
+    's6.p':   'Foreman requests location access only when you tap "Use My Location" in the job form. Location data is stored as part of your job record and is never transmitted to us.',
+    's7.h2':  'Children',
+    's7.p':   'Foreman is not directed at children under 13. We do not knowingly collect data from children.',
+    's8.h2':  'Changes to this policy',
+    's8.p':   'We may update this policy. Continued use of the app after changes means you accept the updated policy.',
+    's9.h2':  'Contact',
+    's9.p':   'Questions? Email us at <a href="mailto:khangazun@gmail.com">support</a>',
+  },
+
+  es: {
+    'page.title': 'Foreman — Política de Privacidad',
+    'h1':         'Foreman — Política de Privacidad',
+    'updated':    'Última actualización: Abril 2026',
+    'intro':      'Foreman («la aplicación») está diseñada para profesionales del sector que valoran su privacidad. Esta política explica qué datos recopilamos, por qué y cómo se almacenan.',
+    's1.h2':  'Datos que recopilamos',
+    's1.li1': '<strong>Datos de trabajo</strong> (títulos, nombres de clientes, direcciones, notas, registros de tiempo, fotos, artículos de factura) — introducidos por usted, almacenados localmente en su dispositivo y opcionalmente sincronizados con su cuenta privada de iCloud.',
+    's1.li2': '<strong>Configuración empresarial</strong> (nombre del negocio, teléfono, correo electrónico, logotipo, tarifa por hora) — almacenados localmente y en su iCloud privado.',
+    's1.li3': '<strong>Información de compra</strong> — gestionada íntegramente por el App Store de Apple y StoreKit. Nunca vemos ni almacenamos datos de pago.',
+    's2.h2':  'Informes de fallos y analítica',
+    's2.p1':  'Foreman utiliza dos servicios de Firebase de Google para mejorar la fiabilidad y comprender cómo se usa la aplicación:',
+    's2.li1': '<strong>Firebase Crashlytics</strong> — envía automáticamente informes de fallos cuando la aplicación se bloquea. Los informes incluyen el modelo del dispositivo, la versión de iOS, la versión de la aplicación y un seguimiento de la pila. No contienen información de identificación personal ni datos que usted introduzca en la aplicación.',
+    's2.li2': '<strong>Firebase Analytics</strong> — registra eventos de uso anonimizados (p. ej., qué funciones se tocan, pantallas visitadas). No se incluyen registros de trabajo, nombres de clientes, fotos ni otros datos personales.',
+    's2.p2':  'Ambos servicios son operados por Google LLC. Los datos se transmiten a los servidores de Google y están sujetos a la <a href="https://policies.google.com/privacy">Política de Privacidad de Google</a>. Puede revisar las prácticas de datos de Firebase en <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.',
+    's3.h2':  'Datos que NO recopilamos',
+    's3.li1': 'No disponemos de servidores propios. Sus datos de trabajo, fotos y configuración solo residen en su dispositivo y en su cuenta privada de iCloud.',
+    's3.li2': 'Nunca vemos ni almacenamos sus registros de trabajo, datos de clientes, fotos o facturas.',
+    's3.li3': 'No vendemos datos ni los compartimos con ningún tercero más allá de los servicios Firebase descritos anteriormente.',
+    's4.h2':  'Sincronización con iCloud',
+    's4.p':   'Si ha iniciado sesión en iCloud, Foreman sincroniza sus datos con su base de datos privada de iCloud mediante CloudKit. Solo usted puede acceder a estos datos; nosotros no tenemos acceso a ellos.',
+    's5.h2':  'Fotos y cámara',
+    's5.p':   'Las fotos que adjunta a los trabajos se almacenan localmente en el directorio de documentos de la aplicación y opcionalmente se sincronizan mediante iCloud. Nunca se suben a ningún otro lugar.',
+    's6.h2':  'Ubicación',
+    's6.p':   'Foreman solicita acceso a la ubicación solo cuando toca «Usar mi ubicación» en el formulario de trabajo. Los datos de ubicación se almacenan como parte de su registro de trabajo y nunca se nos transmiten.',
+    's7.h2':  'Menores de edad',
+    's7.p':   'Foreman no está dirigida a menores de 13 años. No recopilamos datos de menores de forma intencionada.',
+    's8.h2':  'Cambios en esta política',
+    's8.p':   'Podemos actualizar esta política. El uso continuado de la aplicación tras los cambios implica la aceptación de la política actualizada.',
+    's9.h2':  'Contacto',
+    's9.p':   '¿Tiene preguntas? Escríbanos a <a href="mailto:khangazun@gmail.com">support</a>',
+  },
+
+  fr: {
+    'page.title': 'Foreman — Politique de Confidentialité',
+    'h1':         'Foreman — Politique de Confidentialité',
+    'updated':    'Dernière mise à jour : Avril 2026',
+    'intro':      'Foreman (« l\'application ») a été conçue pour les professionnels du bâtiment qui accordent de l\'importance à leur vie privée. Cette politique explique quelles données nous collectons, pourquoi et comment elles sont stockées.',
+    's1.h2':  'Données que nous collectons',
+    's1.li1': '<strong>Données de chantier</strong> (titres, noms des clients, adresses, notes, saisies de temps, photos, articles de facture) — saisies par vous, stockées localement sur votre appareil et éventuellement synchronisées avec votre compte iCloud privé.',
+    's1.li2': '<strong>Paramètres professionnels</strong> (nom de l\'entreprise, téléphone, e-mail, logo, taux horaire) — stockés localement et dans votre iCloud privé.',
+    's1.li3': '<strong>Informations d\'achat</strong> — entièrement gérées par l\'App Store d\'Apple et StoreKit. Nous ne voyons ni ne stockons jamais les données de paiement.',
+    's2.h2':  'Rapports de plantage et analytique',
+    's2.p1':  'Foreman utilise deux services Firebase de Google pour améliorer la fiabilité et comprendre comment l\'application est utilisée :',
+    's2.li1': '<strong>Firebase Crashlytics</strong> — envoie automatiquement des rapports de plantage lorsque l\'application plante. Les rapports comprennent le modèle de l\'appareil, la version d\'iOS, la version de l\'application et une trace de la pile. Ils ne contiennent aucune information personnellement identifiable ni aucune donnée que vous saisissez dans l\'application.',
+    's2.li2': '<strong>Firebase Analytics</strong> — enregistre des événements d\'utilisation anonymisés (p. ex. quelles fonctionnalités sont activées, les écrans visités). Aucun enregistrement de chantier, nom de client, photo ou autre donnée personnelle n\'est inclus.',
+    's2.p2':  'Les deux services sont exploités par Google LLC. Les données sont transmises aux serveurs de Google et soumises à la <a href="https://policies.google.com/privacy">Politique de Confidentialité de Google</a>. Vous pouvez consulter les pratiques de données de Firebase sur <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.',
+    's3.h2':  'Données que nous ne collectons PAS',
+    's3.li1': 'Nous n\'avons pas nos propres serveurs. Vos données de chantier, photos et paramètres résident uniquement sur votre appareil et dans votre compte iCloud privé.',
+    's3.li2': 'Nous ne voyons ni ne stockons jamais vos enregistrements de chantier, coordonnées clients, photos ou factures.',
+    's3.li3': 'Nous ne vendons pas de données et ne les partageons avec aucun tiers au-delà des services Firebase décrits ci-dessus.',
+    's4.h2':  'Synchronisation iCloud',
+    's4.p':   'Si vous êtes connecté à iCloud, Foreman synchronise vos données avec votre base de données iCloud privée via CloudKit. Ces données ne sont accessibles qu\'à vous — nous n\'y avons aucun accès.',
+    's5.h2':  'Photos et appareil photo',
+    's5.p':   'Les photos que vous joignez aux chantiers sont stockées localement dans le répertoire de documents de l\'application et éventuellement synchronisées via iCloud. Elles ne sont jamais téléchargées ailleurs.',
+    's6.h2':  'Localisation',
+    's6.p':   'Foreman demande l\'accès à la localisation uniquement lorsque vous appuyez sur « Utiliser ma position » dans le formulaire de chantier. Les données de localisation sont stockées dans le cadre de votre enregistrement de chantier et ne nous sont jamais transmises.',
+    's7.h2':  'Enfants',
+    's7.p':   'Foreman n\'est pas destinée aux enfants de moins de 13 ans. Nous ne collectons pas sciemment de données auprès d\'enfants.',
+    's8.h2':  'Modifications de cette politique',
+    's8.p':   'Nous pouvons mettre à jour cette politique. L\'utilisation continue de l\'application après les modifications signifie que vous acceptez la politique mise à jour.',
+    's9.h2':  'Contact',
+    's9.p':   'Des questions ? Écrivez-nous à <a href="mailto:khangazun@gmail.com">support</a>',
+  },
+
+  ar: {
+    'page.title': 'Foreman — سياسة الخصوصية',
+    'h1':         'Foreman — سياسة الخصوصية',
+    'updated':    'آخر تحديث: أبريل 2026',
+    'intro':      'تم بناء تطبيق Foreman للحرفيين الذين يقدّرون خصوصيتهم. توضح هذه السياسة البيانات التي نجمعها، والسبب في ذلك، وطريقة تخزينها.',
+    's1.h2':  'البيانات التي نجمعها',
+    's1.li1': '<strong>بيانات الوظائف</strong> (العناوين، أسماء العملاء، العناوين، الملاحظات، إدخالات الوقت، الصور، عناصر الفاتورة) — يدخلها المستخدم، وتُخزَّن محليًا على جهازه وتُزامَن اختياريًا مع حساب iCloud الخاص به.',
+    's1.li2': '<strong>إعدادات الأعمال</strong> (اسم النشاط التجاري، الهاتف، البريد الإلكتروني، الشعار، الأجر بالساعة) — تُخزَّن محليًا وفي iCloud الخاص بك.',
+    's1.li3': '<strong>معلومات الشراء</strong> — تتولى إدارتها Apple\'s App Store وStoreKit بالكامل. لا نرى بيانات الدفع أو نخزّنها أبدًا.',
+    's2.h2':  'تقارير الأعطال والتحليلات',
+    's2.p1':  'يستخدم تطبيق Foreman خدمتين من Firebase التابعة لـ Google لتحسين الموثوقية وفهم كيفية استخدام التطبيق:',
+    's2.li1': '<strong>Firebase Crashlytics</strong> — يرسل تقارير الأعطال تلقائيًا عند تعطّل التطبيق. تتضمن التقارير طراز الجهاز وإصدار iOS وإصدار التطبيق وتتبّع المكدس. لا تحتوي على أي معلومات تعريفية شخصية أو بيانات تدخلها في التطبيق.',
+    's2.li2': '<strong>Firebase Analytics</strong> — يسجّل أحداث استخدام مجهولة الهوية (مثل الميزات التي يتم النقر عليها والشاشات التي تمت زيارتها). لا تُدرَج سجلات الوظائف أو أسماء العملاء أو الصور أو أي بيانات شخصية أخرى.',
+    's2.p2':  'تديرُ Google LLC كلتا الخدمتين. تُنقَل البيانات إلى خوادم Google وتخضع لـ <a href="https://policies.google.com/privacy">سياسة خصوصية Google</a>. يمكنك مراجعة ممارسات بيانات Firebase على <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.',
+    's3.h2':  'البيانات التي لا نجمعها',
+    's3.li1': 'ليس لدينا خوادم خاصة بنا. تقتصر بيانات وظائفك وصورك وإعداداتك على جهازك وحساب iCloud الخاص بك.',
+    's3.li2': 'لا نرى أبدًا سجلات وظائفك أو تفاصيل عملائك أو صورك أو فواتيرك، ولا نخزّنها.',
+    's3.li3': 'لا نبيع البيانات ولا نشاركها مع أي طرف ثالث باستثناء خدمات Firebase الموضحة أعلاه.',
+    's4.h2':  'مزامنة iCloud',
+    's4.p':   'إذا كنت مسجّلًا في iCloud، يزامن Foreman بياناتك مع قاعدة بيانات iCloud الخاصة بك عبر CloudKit. لا يمكن لأحد سواك الوصول إلى هذه البيانات — ليس لدينا أي صلاحية للوصول إليها.',
+    's5.h2':  'الصور والكاميرا',
+    's5.p':   'تُخزَّن الصور التي تُرفق بالوظائف محليًا في دليل مستندات التطبيق وتُزامَن اختياريًا عبر iCloud. لا تُرفَع أبدًا إلى أي مكان آخر.',
+    's6.h2':  'الموقع الجغرافي',
+    's6.p':   'يطلب Foreman الوصول إلى الموقع فقط عند نقرك على «استخدام موقعي الحالي» في نموذج الوظيفة. تُخزَّن بيانات الموقع كجزء من سجل وظيفتك ولا تُرسَل إلينا أبدًا.',
+    's7.h2':  'الأطفال',
+    's7.p':   'لا يستهدف تطبيق Foreman الأطفال دون سن 13 عامًا. لا نجمع بيانات الأطفال عن قصد.',
+    's8.h2':  'التغييرات على هذه السياسة',
+    's8.p':   'قد نحدّث هذه السياسة. يعني استمرار استخدام التطبيق بعد التغييرات موافقتك على السياسة المحدّثة.',
+    's9.h2':  'تواصل معنا',
+    's9.p':   'هل لديك أسئلة؟ راسلنا على <a href="mailto:khangazun@gmail.com">support</a>',
+  },
+
+  ja: {
+    'page.title': 'Foreman — プライバシーポリシー',
+    'h1':         'Foreman — プライバシーポリシー',
+    'updated':    '最終更新日：2026年4月',
+    'intro':      'Foreman（以下「本アプリ」）は、プライバシーを重視する職人・技術者の方々のために開発されています。本ポリシーでは、収集するデータの内容、その理由、および保存方法について説明します。',
+    's1.h2':  '収集するデータ',
+    's1.li1': '<strong>作業データ</strong>（タイトル、顧客名、住所、メモ、作業時間の記録、写真、請求書項目）— ユーザーが入力し、デバイスにローカル保存され、オプションでプライベートiCloudアカウントに同期されます。',
+    's1.li2': '<strong>ビジネス設定</strong>（会社名、電話番号、メールアドレス、ロゴ、時給）— ローカルおよびプライベートiCloudに保存されます。',
+    's1.li3': '<strong>購入情報</strong>— Appleのアプリストアおよびストアキットによって完全に管理されます。支払い情報を当社が閲覧・保存することは一切ありません。',
+    's2.h2':  'クラッシュレポートと分析',
+    's2.p1':  'Foremanは、信頼性の向上とアプリの利用状況把握のため、GoogleのFirebaseサービスを2つ利用しています。',
+    's2.li1': '<strong>Firebase Crashlytics</strong> — アプリがクラッシュした際に自動的にクラッシュレポートを送信します。レポートにはデバイスモデル、iOSバージョン、アプリバージョン、スタックトレースが含まれます。個人を特定できる情報や、アプリに入力したデータは一切含まれません。',
+    's2.li2': '<strong>Firebase Analytics</strong> — 匿名化された使用状況イベント（タップされた機能、訪問したスクリーンなど）を記録します。作業記録、顧客名、写真、その他の個人データは含まれません。',
+    's2.p2':  '両サービスはGoogle LLCが運営しています。データはGoogleのサーバーに送信され、<a href="https://policies.google.com/privacy">Googleのプライバシーポリシー</a>に準拠します。Firebaseのデータ取り扱いについては<a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>でご確認いただけます。',
+    's3.h2':  '収集しないデータ',
+    's3.li1': '当社は独自のサーバーを持っていません。作業データ、写真、設定はデバイスとプライベートiCloudアカウントにのみ保存されます。',
+    's3.li2': '作業記録、顧客情報、写真、請求書を当社が閲覧・保存することは一切ありません。',
+    's3.li3': '上記のFirebaseサービスを除き、データの販売・第三者への提供は行いません。',
+    's4.h2':  'iCloud同期',
+    's4.p':   'iCloudにサインインしている場合、ForemanはCloudKitを使用してデータをプライベートiCloudデータベースに同期します。このデータにアクセスできるのはユーザー本人のみです — 当社はアクセスできません。',
+    's5.h2':  '写真とカメラ',
+    's5.p':   '作業に添付した写真はアプリのドキュメントディレクトリにローカル保存され、オプションでiCloud経由で同期されます。他の場所へのアップロードは一切行われません。',
+    's6.h2':  '位置情報',
+    's6.p':   '作業フォームで「現在地を使用」をタップした場合にのみ、Foremanは位置情報へのアクセスを要求します。位置データは作業記録の一部として保存され、当社に送信されることは一切ありません。',
+    's7.h2':  'お子様について',
+    's7.p':   'Foremanは13歳未満のお子様を対象としていません。当社は意図的にお子様のデータを収集しません。',
+    's8.h2':  '本ポリシーの変更',
+    's8.p':   '本ポリシーは更新される場合があります。変更後もアプリを継続してご利用いただくことで、更新後のポリシーに同意したものとみなされます。',
+    's9.h2':  'お問い合わせ',
+    's9.p':   'ご質問は<a href="mailto:khangazun@gmail.com">support</a>までメールでお送りください。',
+  },
+
+  ko: {
+    'page.title': 'Foreman — 개인정보 처리방침',
+    'h1':         'Foreman — 개인정보 처리방침',
+    'updated':    '최종 업데이트: 2026년 4월',
+    'intro':      'Foreman(이하 "본 앱")은 개인정보를 소중히 여기는 전문 기술자를 위해 개발되었습니다. 이 방침은 수집하는 데이터, 수집 이유 및 저장 방식을 설명합니다.',
+    's1.h2':  '수집하는 데이터',
+    's1.li1': '<strong>작업 데이터</strong> (제목, 고객명, 주소, 메모, 시간 기록, 사진, 청구서 항목) — 사용자가 입력하며, 기기에 로컬 저장되고 선택적으로 개인 iCloud 계정에 동기화됩니다.',
+    's1.li2': '<strong>비즈니스 설정</strong> (사업체명, 전화번호, 이메일, 로고, 시간당 요금) — 로컬 및 개인 iCloud에 저장됩니다.',
+    's1.li3': '<strong>구매 정보</strong> — Apple App Store 및 StoreKit에 의해 전적으로 처리됩니다. 당사는 결제 정보를 절대 보거나 저장하지 않습니다.',
+    's2.h2':  '충돌 보고서 및 분석',
+    's2.p1':  'Foreman은 안정성 향상 및 앱 사용 방식 파악을 위해 Google의 Firebase 서비스 두 가지를 사용합니다.',
+    's2.li1': '<strong>Firebase Crashlytics</strong> — 앱이 충돌할 때 자동으로 충돌 보고서를 전송합니다. 보고서에는 기기 모델, iOS 버전, 앱 버전 및 스택 추적이 포함됩니다. 개인 식별 정보나 앱에 입력한 데이터는 포함되지 않습니다.',
+    's2.li2': '<strong>Firebase Analytics</strong> — 익명화된 사용 이벤트(예: 탭한 기능, 방문한 화면)를 기록합니다. 작업 기록, 고객명, 사진 또는 기타 개인 데이터는 포함되지 않습니다.',
+    's2.p2':  '두 서비스 모두 Google LLC가 운영합니다. 데이터는 Google 서버로 전송되며 <a href="https://policies.google.com/privacy">Google 개인정보처리방침</a>의 적용을 받습니다. Firebase의 데이터 관행은 <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>에서 확인하실 수 있습니다.',
+    's3.h2':  '수집하지 않는 데이터',
+    's3.li1': '당사는 자체 서버를 보유하지 않습니다. 작업 데이터, 사진 및 설정은 기기와 개인 iCloud 계정에만 저장됩니다.',
+    's3.li2': '당사는 작업 기록, 고객 정보, 사진 또는 청구서를 절대 보거나 저장하지 않습니다.',
+    's3.li3': '위에 설명된 Firebase 서비스 외에는 데이터를 판매하거나 제3자와 공유하지 않습니다.',
+    's4.h2':  'iCloud 동기화',
+    's4.p':   'iCloud에 로그인되어 있으면 Foreman은 CloudKit을 사용하여 데이터를 개인 iCloud 데이터베이스에 동기화합니다. 이 데이터는 본인만 접근할 수 있으며 당사는 접근할 수 없습니다.',
+    's5.h2':  '사진 및 카메라',
+    's5.p':   '작업에 첨부하는 사진은 앱의 문서 디렉토리에 로컬 저장되고 선택적으로 iCloud를 통해 동기화됩니다. 다른 곳으로는 업로드되지 않습니다.',
+    's6.h2':  '위치',
+    's6.p':   'Foreman은 작업 양식에서 "현재 위치 사용"을 탭할 때만 위치 접근을 요청합니다. 위치 데이터는 작업 기록의 일부로 저장되며 당사로 전송되지 않습니다.',
+    's7.h2':  '아동',
+    's7.p':   'Foreman은 13세 미만 아동을 대상으로 하지 않습니다. 당사는 의도적으로 아동의 데이터를 수집하지 않습니다.',
+    's8.h2':  '방침 변경',
+    's8.p':   '당사는 이 방침을 업데이트할 수 있습니다. 변경 후 앱을 계속 사용하면 업데이트된 방침에 동의하는 것으로 간주됩니다.',
+    's9.h2':  '문의',
+    's9.p':   '궁금한 점이 있으시면 <a href="mailto:khangazun@gmail.com">support</a>로 이메일을 보내주세요.',
+  },
+
+  vi: {
+    'page.title': 'Foreman — Chính sách Bảo mật',
+    'h1':         'Foreman — Chính sách Bảo mật',
+    'updated':    'Cập nhật lần cuối: Tháng 4, 2026',
+    'intro':      'Foreman ("ứng dụng") được xây dựng cho những người thợ lành nghề coi trọng sự riêng tư. Chính sách này giải thích dữ liệu chúng tôi thu thập, lý do và cách lưu trữ.',
+    's1.h2':  'Dữ liệu chúng tôi thu thập',
+    's1.li1': '<strong>Dữ liệu công việc</strong> (tiêu đề, tên khách hàng, địa chỉ, ghi chú, mục nhập thời gian, ảnh, hạng mục hóa đơn) — do bạn nhập, lưu trữ cục bộ trên thiết bị và tùy chọn đồng bộ với tài khoản iCloud riêng tư của bạn.',
+    's1.li2': '<strong>Cài đặt doanh nghiệp</strong> (tên doanh nghiệp, điện thoại, email, logo, mức giá theo giờ) — lưu trữ cục bộ và trong iCloud riêng tư của bạn.',
+    's1.li3': '<strong>Thông tin mua hàng</strong> — được xử lý hoàn toàn bởi App Store và StoreKit của Apple. Chúng tôi không bao giờ xem hoặc lưu trữ thông tin thanh toán.',
+    's2.h2':  'Báo cáo sự cố và phân tích',
+    's2.p1':  'Foreman sử dụng hai dịch vụ Firebase của Google để cải thiện độ tin cậy và hiểu cách ứng dụng được sử dụng:',
+    's2.li1': '<strong>Firebase Crashlytics</strong> — tự động gửi báo cáo sự cố khi ứng dụng bị crash. Báo cáo bao gồm kiểu thiết bị, phiên bản iOS, phiên bản ứng dụng và stack trace. Không chứa thông tin nhận dạng cá nhân hay dữ liệu bạn nhập vào ứng dụng.',
+    's2.li2': '<strong>Firebase Analytics</strong> — ghi lại các sự kiện sử dụng ẩn danh (ví dụ: tính năng nào được nhấn, màn hình đã truy cập). Không bao gồm hồ sơ công việc, tên khách hàng, ảnh hoặc dữ liệu cá nhân khác.',
+    's2.p2':  'Cả hai dịch vụ đều được vận hành bởi Google LLC. Dữ liệu được truyền đến máy chủ của Google và tuân theo <a href="https://policies.google.com/privacy">Chính sách Bảo mật của Google</a>. Bạn có thể xem các thực hành dữ liệu của Firebase tại <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.',
+    's3.h2':  'Dữ liệu chúng tôi KHÔNG thu thập',
+    's3.li1': 'Chúng tôi không có máy chủ riêng. Dữ liệu công việc, ảnh và cài đặt của bạn chỉ lưu trên thiết bị và trong tài khoản iCloud riêng tư.',
+    's3.li2': 'Chúng tôi không bao giờ xem hoặc lưu trữ hồ sơ công việc, thông tin khách hàng, ảnh hoặc hóa đơn của bạn.',
+    's3.li3': 'Chúng tôi không bán dữ liệu hoặc chia sẻ với bất kỳ bên thứ ba nào ngoài các dịch vụ Firebase đã đề cập.',
+    's4.h2':  'Đồng bộ iCloud',
+    's4.p':   'Nếu bạn đăng nhập iCloud, Foreman đồng bộ dữ liệu của bạn vào cơ sở dữ liệu iCloud riêng tư bằng CloudKit. Dữ liệu này chỉ bạn mới có thể truy cập — chúng tôi không có quyền truy cập.',
+    's5.h2':  'Ảnh và máy ảnh',
+    's5.p':   'Ảnh bạn đính kèm vào công việc được lưu trữ cục bộ trong thư mục tài liệu của ứng dụng và tùy chọn đồng bộ qua iCloud. Chúng không bao giờ được tải lên nơi khác.',
+    's6.h2':  'Vị trí',
+    's6.p':   'Foreman chỉ yêu cầu quyền truy cập vị trí khi bạn nhấn "Dùng vị trí của tôi" trong biểu mẫu công việc. Dữ liệu vị trí được lưu như một phần của hồ sơ công việc và không bao giờ được truyền đến chúng tôi.',
+    's7.h2':  'Trẻ em',
+    's7.p':   'Foreman không hướng đến trẻ em dưới 13 tuổi. Chúng tôi không cố ý thu thập dữ liệu từ trẻ em.',
+    's8.h2':  'Thay đổi chính sách',
+    's8.p':   'Chúng tôi có thể cập nhật chính sách này. Việc tiếp tục sử dụng ứng dụng sau khi thay đổi có nghĩa là bạn chấp nhận chính sách đã cập nhật.',
+    's9.h2':  'Liên hệ',
+    's9.p':   'Câu hỏi? Gửi email cho chúng tôi tại <a href="mailto:khangazun@gmail.com">support</a>',
+  },
+
+  'zh-Hans': {
+    'page.title': 'Foreman — 隐私政策',
+    'h1':         'Foreman — 隐私政策',
+    'updated':    '最后更新：2026年4月',
+    'intro':      'Foreman（以下简称"本应用"）专为重视隐私的技术工人而设计。本政策说明我们收集哪些数据、原因及存储方式。',
+    's1.h2':  '我们收集的数据',
+    's1.li1': '<strong>工作数据</strong>（标题、客户姓名、地址、备注、工时记录、照片、发票项目）— 由您输入，存储在您的设备本地，并可选择同步至您的私人 iCloud 账户。',
+    's1.li2': '<strong>业务设置</strong>（企业名称、电话、邮箱、标志、时薪）— 存储在本地及您的私人 iCloud 中。',
+    's1.li3': '<strong>购买信息</strong> — 完全由 Apple 的 App Store 和 StoreKit 处理。我们从不查看或存储付款信息。',
+    's2.h2':  '崩溃报告与分析',
+    's2.p1':  'Foreman 使用 Google 的两项 Firebase 服务来提升可靠性并了解应用的使用方式：',
+    's2.li1': '<strong>Firebase Crashlytics</strong> — 应用崩溃时自动发送崩溃报告。报告包含设备型号、iOS 版本、应用版本及堆栈跟踪。不含任何个人身份信息，也不含您在应用中输入的数据。',
+    's2.li2': '<strong>Firebase Analytics</strong> — 记录匿名使用事件（例如点击的功能、访问的页面）。不包含工作记录、客户姓名、照片或其他个人数据。',
+    's2.p2':  '两项服务均由 Google LLC 运营。数据将传输至 Google 的服务器，并受 <a href="https://policies.google.com/privacy">Google 隐私政策</a>的约束。您可在 <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a> 查看 Firebase 的数据处理方式。',
+    's3.h2':  '我们不收集的数据',
+    's3.li1': '我们没有自己的服务器。您的工作数据、照片和设置仅存储在您的设备上和私人 iCloud 账户中。',
+    's3.li2': '我们从不查看或存储您的工作记录、客户信息、照片或发票。',
+    's3.li3': '除上述 Firebase 服务外，我们不出售数据，也不与任何第三方共享数据。',
+    's4.h2':  'iCloud 同步',
+    's4.p':   '如果您已登录 iCloud，Foreman 将通过 CloudKit 把您的数据同步至私人 iCloud 数据库。只有您才能访问这些数据 — 我们无法访问。',
+    's5.h2':  '照片和相机',
+    's5.p':   '您附加到工作的照片存储在应用程序文档目录的本地，并可选择通过 iCloud 同步。它们永远不会上传到其他地方。',
+    's6.h2':  '位置',
+    's6.p':   '只有当您在工作表单中点击"使用我的位置"时，Foreman 才会请求位置访问权限。位置数据作为工作记录的一部分存储，永远不会传输给我们。',
+    's7.h2':  '儿童',
+    's7.p':   'Foreman 不面向 13 岁以下儿童。我们不会故意收集儿童数据。',
+    's8.h2':  '政策变更',
+    's8.p':   '我们可能会更新本政策。变更后继续使用本应用即表示您接受更新后的政策。',
+    's9.h2':  '联系方式',
+    's9.p':   '有疑问？请发送邮件至 <a href="mailto:khangazun@gmail.com">support</a>',
+  },
+};
+
+function applyLang(code) {
+  const T = translations[code];
+  if (!T) return;
+  document.documentElement.lang = code;
+  document.documentElement.dir = code === 'ar' ? 'rtl' : 'ltr';
+  if (T['page.title']) document.title = T['page.title'];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (T[key] !== undefined) el.textContent = T[key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (T[key] !== undefined) el.innerHTML = T[key];
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === code);
+  });
+  localStorage.setItem('foreman-lang', code);
+}
+
+(function () {
+  const saved = localStorage.getItem('foreman-lang');
+  applyLang((saved && translations[saved]) ? saved : 'en');
+}());
+</script>
+
 </body>
 </html>
