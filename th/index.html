@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Foreman — จัดการงานและใบแจ้งหนี้สำหรับช่าง</title>
-<meta name="description" content="Foreman คือแอปจัดการงาน ทำใบเสนอราคา และออกใบแจ้งหนี้สำหรับช่างบน iPhone และ iPad: ใบเสนอราคาที่กลายเป็นงานได้ นาฬิกาที่คิดเงินให้ และแท็บเงินที่บอกว่าใครยังค้างจ่ายคุณ">
+<meta name="description" content="Foreman คือแอปจัดการงาน ทำใบเสนอราคา และออกใบแจ้งหนี้สำหรับช่างบน iPhone, iPad, Mac และ Android: ใบเสนอราคาที่กลายเป็นงานได้ นาฬิกาที่คิดเงินให้ และแท็บเงินที่บอกว่าใครยังค้างจ่ายคุณ">
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="../icon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../icon-180.png">
@@ -66,7 +66,7 @@
     <a href="support.html">ช่วยเหลือ</a>
     <a href="privacy.html">นโยบายความเป็นส่วนตัว</a>
     <a href="terms.html">ข้อกำหนดการใช้งาน</a>
-    <a href="mailto:khangazun@gmail.com?subject=%E0%B8%82%E0%B8%AD%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%81%E0%B8%B1%E0%B8%9A%20Foreman&body=%E0%B8%AA%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94%E0%B8%82%E0%B8%B6%E0%B9%89%E0%B8%99%3A%0A%0A%0A%E0%B8%AA%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%89%E0%B8%B1%E0%B8%99%E0%B8%84%E0%B8%B2%E0%B8%94%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%87%3A%0A%0A%0A%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AD%E0%B8%B5%E0%B8%A2%E0%B8%94%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B9%84%E0%B8%94%E0%B9%89%3A%0A-%20iPhone%20%E0%B8%AB%E0%B8%A3%E0%B8%B7%E0%B8%AD%20iPad%20%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%A7%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%8A%E0%B8%B1%E0%B8%99%20iOS%3A%0A-%20%E0%B9%80%E0%B8%A7%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%8A%E0%B8%B1%E0%B8%99%20Foreman%3A%0A">ส่งอีเมลถึงทีมช่วยเหลือ</a>
+    <a href="mailto:khangazun@gmail.com?subject=%E0%B8%82%E0%B8%AD%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%81%E0%B8%B1%E0%B8%9A%20Foreman&body=%E0%B8%AA%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94%E0%B8%82%E0%B8%B6%E0%B9%89%E0%B8%99%3A%0A%0A%0A%E0%B8%AA%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%89%E0%B8%B1%E0%B8%99%E0%B8%84%E0%B8%B2%E0%B8%94%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%87%3A%0A%0A%0A%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AD%E0%B8%B5%E0%B8%A2%E0%B8%94%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B9%84%E0%B8%94%E0%B9%89%3A%0A-%20%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%A7%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%8A%E0%B8%B1%E0%B8%99%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%3A%0A-%20%E0%B9%80%E0%B8%A7%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%8A%E0%B8%B1%E0%B8%99%20Foreman%3A%0A">ส่งอีเมลถึงทีมช่วยเหลือ</a>
     <!-- family:nav --><a href="#more-apps">แอปอื่นๆ</a>
   <details class="family-lang"><summary aria-label="ภาษา: ไทย"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.9 2.6 15.1 0 18M12 3c-2.6 2.9-2.6 15.1 0 18"/></svg><span>ไทย</span></summary>
     <ul>
@@ -118,14 +118,14 @@
     <li><strong>ตั้งราคาแบบที่คุณเสนอราคา</strong> บวกกำไรจากวัสดุ ค่าใช้จ่าย ส่วนลด ภาษี (VAT) สกุลเงินของคุณ โลโก้ และเงื่อนไขการชำระเงินของคุณ</li>
     <li><strong>นาฬิกาที่คิดเงินให้</strong> กดเริ่มเมื่อถึงหน้างานและกดหยุดเมื่อกลับ ชั่วโมงที่ทำจะกลายเป็นรายการค่าแรง ปัดขึ้นเป็น 5, 15 หรือ 30 นาที นาฬิกาเดินได้ทีละงานเท่านั้น</li>
     <li><strong>รูปภาพ ที่อยู่ ลูกค้า</strong> แนบรูปภาพ ค้นหาที่อยู่หน้างานขณะพิมพ์ แล้วโทร ส่งอีเมล หรือขอเส้นทางได้ในแตะเดียว</li>
-    <li><strong>ดูได้ในพริบตา</strong> วิดเจ็ตบนหน้าจอโฮมแสดงยอดที่คุณมีสิทธิ์รับ และงานที่กำลังจับเวลาอยู่</li>
+    <li><strong>ดูได้ในพริบตา</strong> บน iPhone และ iPad วิดเจ็ตบนหน้าจอโฮมแสดงยอดที่คุณมีสิทธิ์รับ และงานที่กำลังจับเวลาอยู่</li>
   </ul>
-  <p class="note">ฟรีสำหรับงานที่กำลังทำสามงานแรกของคุณ Foreman Pro เป็นการซื้อครั้งเดียวที่ปลดล็อกงานไม่จำกัด: ไม่มีการสมัครสมาชิก ต้องใช้ iPhone หรือ iPad ที่เป็น iOS 17 ขึ้นไป</p>
+  <p class="note">ฟรีสำหรับงานที่กำลังทำสามงานแรกของคุณ Foreman Pro เป็นการซื้อครั้งเดียวที่ปลดล็อกงานไม่จำกัด: ไม่มีการสมัครสมาชิก ต้องใช้ iOS 17, macOS 14 หรือ Android 8.0 ขึ้นไป</p>
 </section>
 
 <section class="card">
   <h2>ความเป็นส่วนตัวในย่อหน้าเดียว</h2>
-  <p>งานของคุณอยู่บนอุปกรณ์และใน iCloud ส่วนตัวของคุณเท่านั้น Foreman ไม่มีบัญชีผู้ใช้ ไม่มีโฆษณา ไม่ติดตามผู้ใช้ และตั้งแต่เวอร์ชัน 1.1 ก็ไม่มีการวิเคราะห์หรือรายงานข้อขัดข้องด้วย <a href="privacy.html">นโยบายความเป็นส่วนตัว</a>ฉบับเต็มบอกเรื่องเดียวกันโดยละเอียดกว่านี้</p>
+  <p>งานของคุณอยู่บนอุปกรณ์ และบน iPhone, iPad และ Mac ก็อยู่ใน iCloud ส่วนตัวของคุณเท่านั้น Foreman ไม่มีบัญชีผู้ใช้ ไม่มีโฆษณา ไม่ติดตามผู้ใช้ และตั้งแต่เวอร์ชัน 1.1 ก็ไม่มีการวิเคราะห์หรือรายงานข้อขัดข้องด้วย <a href="privacy.html">นโยบายความเป็นส่วนตัว</a>ฉบับเต็มบอกเรื่องเดียวกันโดยละเอียดกว่านี้</p>
 </section>
 
 <!-- family:apps -->
@@ -159,7 +159,7 @@
 </section>
 <!-- /family:apps -->
 <footer>
-<p>Foreman สำหรับ iPhone และ iPad · <a href="./">หน้าแรก</a> · <a href="support.html">ช่วยเหลือ</a> · <a href="privacy.html">ความเป็นส่วนตัว</a> · <a href="terms.html">ข้อกำหนด</a> · <a href="mailto:khangazun@gmail.com?subject=%E0%B8%82%E0%B8%AD%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%81%E0%B8%B1%E0%B8%9A%20Foreman&body=%E0%B8%AA%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94%E0%B8%82%E0%B8%B6%E0%B9%89%E0%B8%99%3A%0A%0A%0A%E0%B8%AA%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%89%E0%B8%B1%E0%B8%99%E0%B8%84%E0%B8%B2%E0%B8%94%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%87%3A%0A%0A%0A%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AD%E0%B8%B5%E0%B8%A2%E0%B8%94%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B9%84%E0%B8%94%E0%B9%89%3A%0A-%20iPhone%20%E0%B8%AB%E0%B8%A3%E0%B8%B7%E0%B8%AD%20iPad%20%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%A7%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%8A%E0%B8%B1%E0%B8%99%20iOS%3A%0A-%20%E0%B9%80%E0%B8%A7%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%8A%E0%B8%B1%E0%B8%99%20Foreman%3A%0A">khangazun@gmail.com</a></p>
+<p>Foreman สำหรับ iPhone, iPad, Mac และ Android · <a href="./">หน้าแรก</a> · <a href="support.html">ช่วยเหลือ</a> · <a href="privacy.html">ความเป็นส่วนตัว</a> · <a href="terms.html">ข้อกำหนด</a> · <a href="mailto:khangazun@gmail.com?subject=%E0%B8%82%E0%B8%AD%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%81%E0%B8%B1%E0%B8%9A%20Foreman&body=%E0%B8%AA%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94%E0%B8%82%E0%B8%B6%E0%B9%89%E0%B8%99%3A%0A%0A%0A%E0%B8%AA%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%89%E0%B8%B1%E0%B8%99%E0%B8%84%E0%B8%B2%E0%B8%94%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%87%3A%0A%0A%0A%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AD%E0%B8%B5%E0%B8%A2%E0%B8%94%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B9%84%E0%B8%94%E0%B9%89%3A%0A-%20%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%A7%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%8A%E0%B8%B1%E0%B8%99%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%3A%0A-%20%E0%B9%80%E0%B8%A7%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%8A%E0%B8%B1%E0%B8%99%20Foreman%3A%0A">khangazun@gmail.com</a></p>
 </footer>
 </main>
 </body>
