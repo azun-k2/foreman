@@ -52,6 +52,7 @@
 <body>
 <main>
 <div class="hero">
+  <div class="hero-pill">🛠️ Quản lý công trình, báo giá & hóa đơn cho thợ · Thao tác nhanh tại công trường</div>
   <img class="icon" src="../icon-512.png" alt="" width="112" height="112">
   <h1>Foreman</h1>
   <p class="tagline">Công việc, báo giá và hóa đơn cho thợ.</p>
@@ -109,6 +110,69 @@
   </details><!-- /family:nav -->
   </nav>
 </div>
+<div class="demo-wrapper" id="demo">
+  <div class="foreman-stage" role="group" aria-label="Bản demo tương tác: phiếu công trình và xuất hóa đơn PDF tức thì">
+    <div class="foreman-sheet">
+      <div class="foreman-job-header">
+        <span class="foreman-job-title">Sửa ống nước & Chống thấm nhà vệ sinh — 74 Oakridge Rd</span>
+        <span class="foreman-status-badge" id="fmStatus">Đang thi công</span>
+      </div>
+      <table class="foreman-table">
+        <tbody>
+          <tr>
+            <td>🔧 Ống đồng & bộ van áp lực</td>
+            <td class="amt">$240.00</td>
+          </tr>
+          <tr>
+            <td>⏱️ Tiền công thợ chính (5.5 giờ @ $85/h)</td>
+            <td class="amt">$467.50</td>
+          </tr>
+          <tr>
+            <td>📦 Hóa chất màng chống thấm</td>
+            <td class="amt">$95.00</td>
+          </tr>
+          <tr class="foreman-total-row">
+            <td><strong>Tổng thanh toán (gồm VAT):</strong></td>
+            <td class="amt"><strong>$802.50</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="demo-controls">
+      <button class="app-chip" data-status="Báo giá">Báo giá</button>
+      <button class="app-chip active" data-status="Thi công">Thi công</button>
+      <button class="app-chip" data-status="Đã xuất HĐ">Đã xuất HĐ</button>
+      <button class="app-chip" data-status="Đã thu tiền">Đã thu tiền</button>
+    </div>
+    <div class="demo-controls">
+      <button class="tockette-action-btn" id="fmPdfBtn">Xuất hóa đơn PDF</button>
+    </div>
+    <span class="demo-hint">💡 Bấm Xuất hóa đơn PDF để trải nghiệm tạo và gửi hóa đơn trong 60 giây ngay tại công trình</span>
+  </div>
+  <p class="demo-note">Mô phỏng trực quan. Trên iPhone và iPad, Foreman hoạt động 100% ngoại tuyến, giúp bạn gửi hóa đơn trước khi rời nhà khách.</p>
+</div>
+<script>
+(function() {
+  var statusBadge = document.getElementById('fmStatus');
+  var pdfBtn = document.getElementById('fmPdfBtn');
+  var chips = document.querySelectorAll('.foreman-stage .app-chip');
+
+  chips.forEach(function(c) {
+    c.addEventListener('click', function() {
+      chips.forEach(function(x) { x.classList.remove('active'); });
+      c.classList.add('active');
+      statusBadge.textContent = c.getAttribute('data-status');
+    });
+  });
+
+  pdfBtn.addEventListener('click', function() {
+    pdfBtn.textContent = "✓ Đã gửi HĐ #1042 qua Zalo/WhatsApp";
+    setTimeout(function() {
+      pdfBtn.textContent = "Xuất hóa đơn PDF";
+    }, 2800);
+  });
+})();
+</script>
 
 <!-- family:shot --><figure class="shot"><img src="../img/hero.jpg" alt="" width="1600" height="860"></figure><!-- /family:shot -->
 <section class="card">
@@ -125,6 +189,48 @@
   <p class="note">Miễn phí cho ba công việc đang làm đầu tiên của bạn. Foreman Pro là giao dịch mua một lần để dùng không giới hạn công việc: không có gói đăng ký. Cần iOS 17, macOS 14 hoặc Android 8.0 trở lên.</p>
 </section>
 
+<section class="card comparison-card" id="comparison">
+  <h2>Phần mềm kế toán cồng kềnh so với Foreman</h2>
+  <p class="section-lead">Báo giá và hóa đơn thiết kế riêng cho thợ công trình, thao tác nhanh dù tay dính bụi bẩn.</p>
+  <div class="table-scroll">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Đặc tính</th>
+          <th>Phần mềm kế toán phức tạp</th>
+          <th class="highlight-col">Foreman</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Giao diện công trường</strong></td>
+          <td>Nút bấm bé tí, menu nhiều tầng không bấm nổi khi đeo găng tay</td>
+          <td class="highlight-col"><strong>Nút bấm to bản, độ tương phản cao, thao tác cực nhanh bằng 1 tay</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Làm việc ngoại tuyến</strong></td>
+          <td>Mất sóng 4G/5G là đơ máy, không lưu được dữ liệu</td>
+          <td class="highlight-col"><strong>100% ngoại tuyến: ghi nhận công việc và xuất hóa đơn mọi lúc mọi nơi</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Tốc độ xuất hóa đơn</strong></td>
+          <td>Tối về nhà phải ngồi máy tính nửa tiếng để gõ hóa đơn</td>
+          <td class="highlight-col"><strong>Làm hóa đơn PDF chuyên nghiệp và gửi khách ngay trước khi lên xe về</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Chi phí minh bạch</strong></td>
+          <td>Đăng ký thuê bao đắt đỏ hàng tháng ($40+/tháng)</td>
+          <td class="highlight-col"><strong>Mua một lần sở hữu trọn đời hoặc chi phí hợp lý, không giam dữ liệu</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Hiệu năng ứng dụng</strong></td>
+          <td>Web-view chậm chạp, xoay vòng tải trang lâu lắc</td>
+          <td class="highlight-col"><strong>Ứng dụng Swift thuần iOS/iPadOS mở lên là dùng tức thì trong 1 giây</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 <section class="card">
   <h2>Quyền riêng tư trong một đoạn</h2>
   <p>Công việc của bạn ở lại trên thiết bị và, trên iPhone, iPad và Mac, trong iCloud riêng của bạn. Foreman không có tài khoản, không quảng cáo, không theo dõi, và từ phiên bản 1.1 cũng không có phân tích hay báo cáo sự cố. <a href="privacy.html">Chính sách quyền riêng tư</a> đầy đủ nói điều tương tự, chi tiết hơn.</p>

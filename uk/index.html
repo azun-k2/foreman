@@ -52,6 +52,7 @@
 <body>
 <main>
 <div class="hero">
+  <div class="hero-pill">🛠️ Jobs, quotes & invoices for trades · Built for dirty hands on site</div>
   <img class="icon" src="../icon-512.png" alt="" width="112" height="112">
   <h1>Foreman</h1>
   <p class="tagline">Замовлення, кошториси та рахунки для майстрів.</p>
@@ -109,6 +110,69 @@
   </details><!-- /family:nav -->
   </nav>
 </div>
+<div class="demo-wrapper" id="demo">
+  <div class="foreman-stage" role="group" aria-label="Interactive demo: trades job sheet and fast mobile PDF invoice builder">
+    <div class="foreman-sheet">
+      <div class="foreman-job-header">
+        <span class="foreman-job-title">Bathroom Plumbing & Tile Prep — 74 Oakridge Rd</span>
+        <span class="foreman-status-badge" id="fmStatus">In Progress</span>
+      </div>
+      <table class="foreman-table">
+        <tbody>
+          <tr>
+            <td>🔧 Copper pipe fittings & pressure valves</td>
+            <td class="amt">$240.00</td>
+          </tr>
+          <tr>
+            <td>⏱️ Master plumber labor (5.5 hrs @ $85/hr)</td>
+            <td class="amt">$467.50</td>
+          </tr>
+          <tr>
+            <td>📦 Waterproof membrane sealant compound</td>
+            <td class="amt">$95.00</td>
+          </tr>
+          <tr class="foreman-total-row">
+            <td><strong>Total Due (incl. Tax):</strong></td>
+            <td class="amt"><strong>$802.50</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="demo-controls">
+      <button class="app-chip" data-status="Quoted">Quoted</button>
+      <button class="app-chip active" data-status="In Progress">In Progress</button>
+      <button class="app-chip" data-status="Invoiced">Invoiced</button>
+      <button class="app-chip" data-status="Paid">Paid</button>
+    </div>
+    <div class="demo-controls">
+      <button class="tockette-action-btn" id="fmPdfBtn">Generate PDF Invoice</button>
+    </div>
+    <span class="demo-hint">💡 Click Generate PDF Invoice to simulate one-tap mobile invoicing from the job site</span>
+  </div>
+  <p class="demo-note">Visual simulation. On iPhone and iPad, Foreman works 100% offline so tradespeople can invoice before leaving the driveway.</p>
+</div>
+<script>
+(function() {
+  var statusBadge = document.getElementById('fmStatus');
+  var pdfBtn = document.getElementById('fmPdfBtn');
+  var chips = document.querySelectorAll('.foreman-stage .app-chip');
+
+  chips.forEach(function(c) {
+    c.addEventListener('click', function() {
+      chips.forEach(function(x) { x.classList.remove('active'); });
+      c.classList.add('active');
+      statusBadge.textContent = c.getAttribute('data-status');
+    });
+  });
+
+  pdfBtn.addEventListener('click', function() {
+    pdfBtn.textContent = "✓ Invoice #1042 Sent via WhatsApp";
+    setTimeout(function() {
+      pdfBtn.textContent = "Generate PDF Invoice";
+    }, 2800);
+  });
+})();
+</script>
 
 <!-- family:shot --><figure class="shot"><img src="../img/hero.jpg" alt="" width="1600" height="860"></figure><!-- /family:shot -->
 <section class="card">
@@ -125,6 +189,48 @@
   <p class="note">Безкоштовно для перших трьох активних замовлень. Foreman Pro — разова покупка для необмеженої кількості замовлень: без підписки. Потрібна iOS 17, macOS 14 або Android 8.0 чи новіша.</p>
 </section>
 
+<section class="card comparison-card" id="comparison">
+  <h2>Desktop accounting software vs Foreman</h2>
+  <p class="section-lead">Quotes and invoices built specifically for tradespeople working on active job sites.</p>
+  <div class="table-scroll">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Aspect</th>
+          <th>Complex Accounting Suites</th>
+          <th class="highlight-col">Foreman</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Site-Ready UI</strong></td>
+          <td>Tiny buttons and multi-step drop-down menus</td>
+          <td class="highlight-col"><strong>Large tap targets, high contrast, easy to use with dirty hands</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Offline Reliability</strong></td>
+          <td>Fails to save or spins endlessly without 5G cell reception</td>
+          <td class="highlight-col"><strong>100% offline-first: quotes and invoices save instantly anywhere</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Invoicing Speed</strong></td>
+          <td>15 minutes of desktop bookkeeping at home at midnight</td>
+          <td class="highlight-col"><strong>Create and send a professional PDF invoice in 60 seconds on site</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Transparent Pricing</strong></td>
+          <td>Costly monthly subscriptions ($40+/month) with locked data</td>
+          <td class="highlight-col"><strong>Fair single purchase or transparent pricing with no hostage data</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Native Performance</strong></td>
+          <td>Sluggish web wrappers with long loading spinners</td>
+          <td class="highlight-col"><strong>Native Swift iOS/iPadOS performance that launches instantly</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 <section class="card">
   <h2>Конфіденційність в одному абзаці</h2>
   <p>Ваші замовлення залишаються на вашому пристрої, а на iPhone, iPad і Mac ще й у вашому приватному iCloud. У Foreman немає облікових записів, реклами й стеження, а з версії 1.1 немає й аналітики чи звітів про збої. Повна <a href="privacy.html">політика конфіденційності</a> говорить те саме, тільки докладніше.</p>
